@@ -37,7 +37,7 @@ app.post('/linewebhook', parser, function (req, res) {
 bot.on('message',function(event){
     const BOT_NAME = "@dart";
     const input = event.message.text;
-    if (input.startsWith(BOT_NAME)) {
+    if (input.indexOf(BOT_NAME) > -1) {
         request({
             url:'http://league.dartslive.tw/admin/team/info.jsp?lid=60886d06cf799c31&sid=fec1ae84bb28bd87&did=04bea5f61d9438e4&tid=d3f9114b46845767',
             method:'GET'
