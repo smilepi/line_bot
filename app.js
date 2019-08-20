@@ -6,6 +6,8 @@ const cheerio = require('cheerio');
 const fs = require('fs');
 const botJson = require('./bot.json');
 
+const port = process.env.PORT || 8888;
+
 var bot = linebot({
     channelId:'1609271403',
     channelScrect:'e7cbab1530216af12aae6666d018408a',
@@ -77,6 +79,6 @@ bot.on('message',function(event){
     
 });
 
-app.listen(8888, function(){
+app.listen(port, function(){
     console.log('linebot is running');
 });
